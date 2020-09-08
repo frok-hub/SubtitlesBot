@@ -13,13 +13,13 @@ from telegram import (
 from telegram.ext import CallbackContext
 
 def start(update: Update, context: CallbackContext):
-    context.bot.send_message(chat_id=update.effective_chat.id, text=f"Hi *{update.effective_user.first_name}*!\n\nI am subtitle downloader bot. I can provide movie subtitles.\n\n==> Just send me Movie name. Use @imdb or @imdbot inline to get currect movie name.\n\nSubscribe ℹ️ @Keralabotsnews if you ❤️ using this bot!", parse_mode="Markdown")
+    context.bot.send_message(chat_id=update.effective_chat.id, text=f"Hi *{update.effective_user.first_name}*!\n\nI am subtitle downloader bot. I can provide movie subtitles.\n\n==> Just send me Movie name. Use @s4h_imdbot inline to get currect movie name.\n\nSubscribe ℹ️ @s4hchannel if you ❤️ using this bot!", parse_mode="Markdown")
 
 def searching(update: Update, context: CallbackContext):
     if update.message.via_bot != None:
         return
 
-    search_message = context.bot.send_message(chat_id=update.effective_chat.id, text="Searching your subtitle file")
+    search_message = context.bot.send_message(chat_id=update.effective_chat.id, text="Searching your subtitle file.....")
     sub_name = update.effective_message.text
     index, title, keyword = search_sub(sub_name)
     inline_keyboard = []
